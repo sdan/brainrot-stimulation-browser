@@ -55,11 +55,33 @@ console.log("Content script loaded on:", window.location.href);
   rightVideo.src = 'https://brainrot-vscode-ext.sdan.io/videos_15/subwaysurfer_part9.mp4';
   rightContainer.appendChild(rightVideo);
 
-  // 4. Append containers to the page
+  // 4. Create unmute button
+  const unmuteButton = document.createElement('button');
+  unmuteButton.innerText = "Unmute Videos";
+  unmuteButton.style.position = 'fixed';
+  unmuteButton.style.bottom = '20px';
+  unmuteButton.style.left = '20px';
+  unmuteButton.style.zIndex = '10000';
+  unmuteButton.style.padding = '8px 16px';
+  unmuteButton.style.backgroundColor = '#4CAF50';
+  unmuteButton.style.color = 'white';
+  unmuteButton.style.border = 'none';
+  unmuteButton.style.borderRadius = '4px';
+  unmuteButton.style.cursor = 'pointer';
+  unmuteButton.onclick = () => {
+    leftVideo.muted = false;
+    rightVideo.muted = false;
+    leftVideo.play().catch(err => console.error('Left video unmute error:', err));
+    rightVideo.play().catch(err => console.error('Right video unmute error:', err));
+    unmuteButton.style.display = 'none';  // Hide button after unmuting
+  };
+
+  // 5. Append containers and button to the page
   document.body.appendChild(leftContainer);
   document.body.appendChild(rightContainer);
+  document.body.appendChild(unmuteButton);
 
-  // 5. Add video list and random selection
+  // 6. Add video list and random selection
   const videos = [
     'subwaysurfer_part9.mp4',
     'minecraft_part9.mp4',
@@ -76,10 +98,21 @@ console.log("Content script loaded on:", window.location.href);
   // 6. Set up video switching
   function switchVideo(videoElement) {
     videoElement.src = getRandomVideo();
+    videoElement.muted = true;  // Ensure muted state is maintained
     videoElement.load();
-    videoElement.play().catch(error => {
-      console.error('Auto-play was prevented:', error);
-    });
+    
+    // Try to play with retry logic
+    const attemptPlay = (retries = 3) => {
+      videoElement.play().catch(error => {
+        console.error('Auto-play was prevented:', error);
+        if (retries > 0) {
+          console.log(`Retrying playback, ${retries} attempts remaining...`);
+          setTimeout(() => attemptPlay(retries - 1), 1000);
+        }
+      });
+    };
+    
+    attemptPlay();
   }
 
   // Switch videos periodically
