@@ -9,18 +9,14 @@ you found brainrot stimulation in your vscode now its in your browser
 
 ## 🚀 for developers
 
-### making a new release
-want to push out a new version? just do:
-```bash
-git tag v1.0.0  # use whatever version number you want
-git push origin v1.0.0
-```
-
-the github action will automatically:
+### automatic releases
+every time you push to master, we automatically:
+- create a new release named after the commit SHA
 - zip up the extension files
-- create a new release
-- attach the zip file
+- attach the zip to the release
 - generate some cool release notes
+
+no need to create tags manually - it's all automatic! 🎉
 
 ### local development
 1. clone this repo
