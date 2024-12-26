@@ -30,7 +30,7 @@
   leftVideo.style.width = '100%';
   leftVideo.style.height = '100%';
   leftVideo.style.objectFit = 'cover';
-  leftVideo.src = 'https://brainrot-vscode-ext.sdan.io/videos_15/subwaysurfer.mp4';
+  leftVideo.src = 'https://brainrot-vscode-ext.sdan.io/videos_15/subwaysurfer_part9.mp4';
   leftContainer.appendChild(leftVideo);
 
   // 3. Similar approach for right container
@@ -51,7 +51,7 @@
   rightVideo.style.width = '100%';
   rightVideo.style.height = '100%';
   rightVideo.style.objectFit = 'cover';
-  rightVideo.src = 'https://brainrot-vscode-ext.sdan.io/videos_15/subwaysurfer.mp4';
+  rightVideo.src = 'https://brainrot-vscode-ext.sdan.io/videos_15/subwaysurfer_part9.mp4';
   rightContainer.appendChild(rightVideo);
 
   // 4. Append containers to the page
@@ -60,10 +60,10 @@
 
   // 5. Add video list and random selection
   const videos = [
-    'subwaysurfer.mp4',
-    'minecraft.mp4',
-    'sliceit.mp4',
-    'slime.mp4'
+    'subwaysurfer_part9.mp4',
+    'minecraft_part9.mp4',
+    'sliceit_part9.mp4',
+    'slime_part9.mp4'
   ];
   const baseDomain = 'https://brainrot-vscode-ext.sdan.io/videos_15/';
 
