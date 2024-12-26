@@ -1,0 +1,26 @@
+name: Create Release with Extension ZIP
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Create Extension ZIP
+        run: |
+          cd chatgpt-overlay
+          zip -r ../brainrot-stimulation-extension.zip . -x "*.git*"
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: brainrot-stimulation-extension.zip
+          generate_release_notes: true
