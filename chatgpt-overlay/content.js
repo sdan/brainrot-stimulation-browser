@@ -1,4 +1,5 @@
 // Video overlay injection for ChatGPT
+console.log("Content script loaded on:", window.location.href);
 (() => {
   // Wait for page to be fully loaded
   const initOverlays = () => {
