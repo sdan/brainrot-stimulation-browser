@@ -1,21 +1,28 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "ChatGPT Video Overlays",
   "version": "1.0",
   "description": "Adds video overlays to the sides of ChatGPT interface",
-  "permissions": ["activeTab", "webRequest", "webRequestBlocking"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
-      "matches": ["https://chat.openai.com/*", "https://chatgpt.com/*"],
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*"
+      ],
       "js": ["content.js"]
     }
   ],
   "icons": {
     "48": "icon48.png",
     "128": "icon128.png"
-  },
-  "background": {
-    "service_worker": "background.js"
   }
 }
