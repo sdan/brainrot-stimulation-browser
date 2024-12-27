@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name        ChatGPT Video Overlays
+// @name        Brainrot Stimulation for ChatGPT
 // @namespace   https://github.com/sdan/brainrot-stimulation
-// @version     1.0
+// @version     1.1
 // @description Inject two video screens at left/right of ChatGPT.com
 // @match       https://chat.openai.com/*
 // ==/UserScript==
