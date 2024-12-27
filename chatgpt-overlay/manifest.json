@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "ChatGPT Video Overlays",
+  "name": "Brainrot Stimulation for ChatGPT",
   "version": "1.1",
-  "description": "Adds video overlays to the sides of ChatGPT interface",
+  "description": "Adds video overlays to the sides of ChatGPT.com",
   "permissions": ["activeTab"],
   "content_scripts": [
     {
