@@ -3,7 +3,8 @@
   "name": "ChatGPT Video Overlays",
   "version": "1.0",
   "description": "Adds video overlays to the sides of ChatGPT interface",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "webRequest", "webRequestBlocking"],
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
       "matches": ["https://chat.openai.com/*", "https://chatgpt.com/*"],
@@ -13,5 +14,8 @@
   "icons": {
     "48": "icon48.png",
     "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
   }
 }
