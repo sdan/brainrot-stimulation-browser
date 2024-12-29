@@ -3,7 +3,6 @@
   "name": "Brainrot Stimulation for ChatGPT",
   "version": "1.1",
   "description": "Adds video overlays to the sides of ChatGPT.com",
-  "permissions": ["activeTab"],
   "content_scripts": [
     {
       "matches": [
