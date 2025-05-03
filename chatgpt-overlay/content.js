@@ -114,7 +114,7 @@
     setVideos();
 
     // Switch videos every 30 seconds
-    setInterval(setVideos, 30000);
+    // setInterval(setVideos, 30000);
     
     console.log('ChatGPT Video Overlay: Setup complete');
   };

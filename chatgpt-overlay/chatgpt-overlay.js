@@ -62,17 +62,17 @@
   }
 
   // 6. Set up video switching
-  function switchVideo(videoElement) {
-    videoElement.src = getRandomVideo();
-    videoElement.load();
-    videoElement.play().catch(error => {
-      console.error('Auto-play was prevented:', error);
-    });
-  }
+  // function switchVideo(videoElement) {
+  //   videoElement.src = getRandomVideo();
+  //   videoElement.load();
+  //   videoElement.play().catch(error => {
+  //     console.error('Auto-play was prevented:', error);
+  //   });
+  // }
 
   // Switch videos periodically
-  setInterval(() => {
-    switchVideo(leftVideo);
-    switchVideo(rightVideo);
-  }, 30000); // Switch every 30 seconds
+  // setInterval(() => {
+  //   switchVideo(leftVideo);
+  //   switchVideo(rightVideo);
+  // }, 30000); // Switch every 30 seconds
 })();
