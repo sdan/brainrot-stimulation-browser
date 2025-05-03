@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Brainrot Stimulation for ChatGPT",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Adds video overlays to the sides of ChatGPT.com",
   "content_scripts": [
     {
